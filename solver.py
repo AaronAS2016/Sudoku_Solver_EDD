@@ -1,3 +1,23 @@
+
+
+#TODO: FUncionalidades y requerimientos que hay que haces
+# [] Armar la clase solver
+# [X] Pintar el tablero
+# [X] Buscar casillero vacio 
+# [] Validar casillero 
+# [] Implementar solver usando backtracking
+# [] Leer tableros de archivos .csv
+# [] Generar menues 
+# [] Registrar el tiempo de ejecución
+# [] Generar las soluciones en un archivo .csv
+# [] Generar test unitarios
+# [] Calcular complejidad computacional
+# [] Manejo de Excepciones
+# [] Medicion de tiempos
+# [] Informe
+
+
+
 board = [
     [7,8,0,4,0,0,1,2,0],
     [6,0,0,0,7,5,0,0,9],
