@@ -1,11 +1,12 @@
 
 
-#TODO: FUncionalidades y requerimientos que hay que haces
-# [] Armar la clase solver
+#TODO: Funcionalidades y requerimientos que hay que hacer
+# [] Armar la clase Solver
 # [X] Pintar el tablero
 # [X] Buscar casillero vacio 
 # [] Validar casillero 
 # [] Implementar solver usando backtracking
+# [] Definir estructura de datos para los archivos .csv
 # [] Leer tableros de archivos .csv
 # [] Generar menues 
 # [] Registrar el tiempo de ejecución
