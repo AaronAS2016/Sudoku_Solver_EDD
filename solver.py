@@ -8,8 +8,10 @@
 # [] Implementar solver usando backtracking
 # [] Definir estructura de datos para los archivos .csv
 # [] Leer tableros de archivos .csv
+# [] Escribir tableros de sudokus
 # [] Generar menues 
 # [] Registrar el tiempo de ejecución
+# [] Solver 9x9
 # [] Generar las soluciones en un archivo .csv
 # [] Generar test unitarios
 # [] Calcular complejidad computacional
