@@ -98,3 +98,5 @@ def find_empty(board):
     return None
 
 print_board(board)
+print("------SOLUCION:-------")
+print_board(solve(board))
