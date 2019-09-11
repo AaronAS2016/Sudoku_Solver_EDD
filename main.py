@@ -6,14 +6,15 @@ from solver import Solver
 # [X] Validar casillero 
 # [X] Implementar solver usando backtracking
 # [] Definir estructura de datos para los archivos .csv -- AARON
-# [] Leer tableros de archivos .csv -- AARON 
-# [] Armar clase lector .csv -- AARON 
+# [X] Leer tableros de archivos .csv -- AARON 
+# [X] Armar clase lector .csv -- AARON 
 # [] Escribir tableros de sudokus -- MICA
 # [] Generar menues  -- MICA
 # [] Registrar el tiempo de ejecución -- MICA / CHRISTIAN
 # [X] Solver 9x9 
-# {} Persistencia
+# [] Persistencia
 # [] Generar las soluciones en un archivo .csv
+# [] Escribir clase Writter
 # [] Generar test unitarios
 # [] Calcular complejidad computacional
 # [] Manejo de Excepciones
