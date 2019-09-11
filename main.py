@@ -6,9 +6,11 @@ from reader import Reader
 # [X] Buscar casillero vacio 
 # [X] Validar casillero 
 # [X] Implementar solver usando backtracking
-# [] Definir estructura de datos para los archivos .csv -- AARON
+# [X] Definir estructura de datos para los archivos .csv -- AARON
 # [X] Leer tableros de archivos .csv -- AARON 
 # [X] Armar clase lector .csv -- AARON 
+# [] Separar en varios tableros
+# [] Generar excepciones en el reader
 # [] Escribir tableros de sudokus -- MICA
 # [] Generar menues  -- MICA
 # [] Registrar el tiempo de ejecución -- MICA / CHRISTIAN
