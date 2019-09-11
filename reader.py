@@ -79,13 +79,13 @@ class Reader():
 ## Test caseros 
 
 # Caso bueno
-lector = Reader()
+""" lector = Reader()
 lector.setFile('resources/boards.csv')
-print(lector.readFileAsCSV(','))
+print(lector.readFileAsCSV(',')) """
 
 #Caso Malo
-lector2 = Reader()
+""" lector2 = Reader()
 lector2.setFile('rutaquenoexisteniagancho')
-print(lector2.readFileAsCSV())
+print(lector2.readFileAsCSV()) """
 
     

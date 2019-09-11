@@ -1,4 +1,5 @@
 from solver import Solver
+from reader import Reader
 #TODO: Funcionalidades y requerimientos que hay que hacer
 # [X] Armar la clase Solver
 # [X] Pintar el tablero
@@ -21,9 +22,8 @@ from solver import Solver
 # [] Medicion de tiempos
 # [] Informe
 
-
-
-board = [
+""" 
+board2 = [
     [7,8,0,4,0,0,1,2,0],
     [6,0,0,0,7,5,0,0,9],
     [0,0,0,6,0,1,0,7,8],
@@ -35,16 +35,19 @@ board = [
     [0,4,9,2,0,6,0,0,7]
 ]
 
+ """
+reader = Reader('resources/boards.csv', ',')
 
+board = reader.readFileAsCSV()
 
 sudoku = Solver()
 
+#Un fix rapido por que los elementos que trae el reader, estan en formato Strings, ver donde ponemos esta conversion
+board_fixed = [[int(num) for num in sub] for sub in board]
+
+
 sudoku.print_board(board)
-print(" --------SOLUCION -------------")
-sudoku.print_board(sudoku.solve(board))
-
-
-
-
-
-
+print("\n")
+print("-------SOLUCION---------")
+print("\n")
+sudoku.print_board(sudoku.solve(board_fixed))

@@ -42,7 +42,7 @@ class Solver():
         for i in range(len(board)):
             #Every 3 rows print a separator
             if i % 3 == 0 and i != 0:
-                print("- - - - - - - - - - - - -")
+                print("- - - - - - - - - - - -")
 
             for j in range(len(board[0])):
 
