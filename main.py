@@ -12,6 +12,7 @@ from solver import Solver
 # [] Generar menues  -- MICA
 # [] Registrar el tiempo de ejecución -- MICA / CHRISTIAN
 # [X] Solver 9x9 
+# {} Persistencia
 # [] Generar las soluciones en un archivo .csv
 # [] Generar test unitarios
 # [] Calcular complejidad computacional
