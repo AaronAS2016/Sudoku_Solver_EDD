@@ -20,14 +20,15 @@ class Solver():
                     return False
         return True
 
-    def solve(self, board):
+    def solve(self, board, dimension = 9):
         find = self.find_empty(board)
+        
         if not find:
             return board
         else:
             row, column = find
         
-        for i in range(1,10):
+        for i in range(1, dimension + 1):
             if self.valid(board, i, (row, column)):
                 board[row][column] = i
 
