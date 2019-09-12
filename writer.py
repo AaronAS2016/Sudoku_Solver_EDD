@@ -23,3 +23,17 @@ class Writer:
         with open(path, 'w') as csvWriter:
             writter = csv.writer(csvWriter)
             writter.writerows(data)
+
+
+#Tests caseros
+
+
+##TEST NRO1: CASO OK
+
+listaTest = [
+    [1,2,3,4,5,6,7,8,9],
+    [2,2,34,34,5,6,7,8,2]
+]
+
+escritor = Writer('resources/test.csv', listaTest)
+escritor.writeAsCSV()
