@@ -17,7 +17,7 @@ from reader import Reader
 # [X] Solver 9x9 
 # [] Persistencia
 # [] Generar las soluciones en un archivo .csv
-# [] Escribir clase Writter
+# [X] Escribir clase Writter -- Aaron
 # [] Generar test unitarios
 # [] Calcular complejidad computacional
 # [] Manejo de Excepciones
