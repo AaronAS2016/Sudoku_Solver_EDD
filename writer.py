@@ -19,16 +19,17 @@ class Writer:
         if data is None:
             data = self._file_data
 
-
-        with open(path, 'w') as csvWriter:
-            writter = csv.writer(csvWriter)
-            writter.writerows(data)
-
+        try:
+            with open(path, 'w') as csvWriter:
+                writter = csv.writer(csvWriter)
+                writter.writerows(data)
+        except ValueError:
+            print("Ocurrio un errro al intentar escribir el archivo: " + ValueError)
 
 #Tests caseros
 
 
-##TEST NRO1: CASO OK
+# TEST NRO1: CASO OK
 
 listaTest = [
     [1,2,3,4,5,6,7,8,9],
@@ -37,3 +38,11 @@ listaTest = [
 
 escritor = Writer('resources/test.csv', listaTest)
 escritor.writeAsCSV()
+
+# TEST NRO2: CASO NO OK
+
+#escritor.setResultPath('C://asdmsadksa//aidhasdhsa////rutaquenoexi/steniagancho')
+#escritor.writeAsCSV()
+
+#TODO: 
+#[]: Corregir TEST NRO2 (Opcional)
