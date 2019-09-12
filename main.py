@@ -9,20 +9,20 @@ from reader import Reader
 # [X] Definir estructura de datos para los archivos .csv -- AARON
 # [X] Leer tableros de archivos .csv -- AARON 
 # [X] Armar clase lector .csv -- AARON 
-# [] Separar en varios tableros
-# [] Generar excepciones en el reader
+# [] Separar en varios tableros --- MICA
+# [] Generar excepciones en el reader ----- Mica / Chris
 # [] Escribir tableros de sudokus -- MICA
 # [] Generar menues  -- MICA
 # [] Registrar el tiempo de ejecución -- MICA / CHRISTIAN
 # [X] Solver 9x9 
-# [] Persistencia
-# [] Generar las soluciones en un archivo .csv
-# [] Escribir clase Writter
-# [] Generar test unitarios
-# [] Calcular complejidad computacional
-# [] Manejo de Excepciones
-# [] Medicion de tiempos
-# [] Informe
+# [] Persistencia ---- A debatir
+# [] Generar las soluciones en un archivo .csv---- MICA
+# [] Escribir clase Writter ---- A debatir
+# [] Generar test unitarios ---- Chris
+# [] Calcular complejidad computacional ---- Mica / CHRIS
+# [] Manejo de Excepciones ---- Chris
+# [] Medicion de tiempos ---- Mica Chris #
+# [] Informe ---- ya veremo
 
 """ 
 board2 = [
