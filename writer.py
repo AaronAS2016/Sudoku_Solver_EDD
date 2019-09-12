@@ -1,3 +1,5 @@
+import csv
+
 class Writer:
 
     def __init__(self, result_file_path="", file_data=""):
@@ -10,11 +12,14 @@ class Writer:
     def setResultPath(self,path):
         self._result_file_path = path
     
-    def write(self, path=None, data=None):
+    def writeAsCSV(self, path=None, data=None):
 
         if path is None:
             path = self._result_file_path
         if data is None:
             data = self._file_data
-    
-        #TODO: Completar funcionalidad para escribir en un archivo
+
+
+        with open(path, 'w') as csvWriter:
+            writter = csv.writer(csvWriter)
+            writter.writerows(data)
