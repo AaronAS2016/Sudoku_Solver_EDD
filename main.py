@@ -1,55 +1,44 @@
+
+
 from solver import Solver
 from reader import Reader
-#TODO: Funcionalidades y requerimientos que hay que hacer
-# [X] Armar la clase Solver
-# [X] Pintar el tablero
-# [X] Buscar casillero vacio 
-# [X] Validar casillero 
-# [X] Implementar solver usando backtracking
-# [X] Definir estructura de datos para los archivos .csv -- AARON
-# [X] Leer tableros de archivos .csv -- AARON 
-# [X] Armar clase lector .csv -- AARON 
-# [] Separar en varios tableros
-# [] Generar excepciones en el reader
-# [] Escribir tableros de sudokus -- MICA
-# [] Generar menues  -- MICA
-# [] Registrar el tiempo de ejecución -- MICA / CHRISTIAN
-# [X] Solver 9x9 
-# [] Persistencia
-# [] Generar las soluciones en un archivo .csv
-# [X] Escribir clase Writter -- Aaron
-# [] Generar test unitarios
-# [] Calcular complejidad computacional
-# [] Manejo de Excepciones
-# [] Medicion de tiempos
-# [] Informe
+import menu
+import os
+import time
 
-""" 
-board2 = [
-    [7,8,0,4,0,0,1,2,0],
-    [6,0,0,0,7,5,0,0,9],
-    [0,0,0,6,0,1,0,7,8],
-    [0,0,7,0,4,0,2,6,0],
-    [0,0,1,0,5,0,9,3,0],
-    [9,0,4,0,6,0,0,0,5],
-    [0,7,0,3,0,0,0,1,2],
-    [1,2,0,0,0,7,4,0,0],
-    [0,4,9,2,0,6,0,0,7]
-]
-
- """
 reader = Reader('resources/boards.csv', ',')
 
 board = reader.readFileAsCSV()
 
 sudoku = Solver()
 
-#Un fix rapido por que los elementos que trae el reader, estan en formato Strings, ver donde ponemos esta conversion
+os.system('clear')
+# Un fix rapido por que los elementos que trae el reader, estan en formato Strings, ver donde ponemos esta conversion
+
 board_fixed = [[int(num) for num in sub] for sub in board]
 
 
-sudoku.print_board(board)
-print("\n")
-print("-------SOLUCION---------")
-print("\n")
-sudoku.print_board(sudoku.solve(board_fixed))
+def printMenu():
+    print("1 - Ingresar el nombre de un archivo (path completo) con la entrada de datos")
+    print("2 - Guardar la ejecución parcial, con un nombre arbitrario")
+    print("3 - Recuperar una ejecución parcial y continuarla.")
+    print("4 - Salir")
+
+
+def solverMode():
+    pass
+
+
+answer = 0
+while(answer != "4"):
+    printMenu()
+    answer = input("Ingrese la opcion que quiera ejecutar: ")
+    if answer == "1":
+        solverMode()
+
+
+os.system('clear')
+print("Gracias por jugar!")
+print("Apagando la magia...")
+time.sleep(3)
+os.system('clear')
