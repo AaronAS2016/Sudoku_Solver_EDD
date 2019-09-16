@@ -1,4 +1,7 @@
 # Print iterations progress
+import time
+
+
 def printProgressBar(iteration, total, prefix='', suffix='', decimals=1, length=100, fill='█'):
     """
     Call in a loop to create terminal progress bar
