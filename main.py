@@ -44,11 +44,10 @@ def solveBoard(board):
     sudoku.print_board(board)
     print("\n")
     print("=========Solucion============")
-
+    print("\n")
     sudoku_solved = sudoku.solve(board)
 
     sudoku.print_board(sudoku_solved)
-    print("\n")
     print("\n")
 
     return sudoku_solved
