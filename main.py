@@ -1,5 +1,4 @@
-from solver import Solver
-from reader import Reader
+from menu import Menu
 #TODO: Funcionalidades y requerimientos que hay que hacer
 # [X] Armar la clase Solver
 # [X] Pintar el tablero
@@ -21,7 +20,6 @@ from reader import Reader
 # [] Generar test unitarios
 # [] Calcular complejidad computacional
 # [] Manejo de Excepciones
-# [] Medicion de tiempos
 # [] Informe
 
 """ 
@@ -38,18 +36,7 @@ board2 = [
 ]
 
  """
-reader = Reader('resources/boards.csv', ',')
 
-board = reader.readFileAsCSV()
+menu = Menu()
 
-sudoku = Solver()
-
-#Un fix rapido por que los elementos que trae el reader, estan en formato Strings, ver donde ponemos esta conversion
-board_fixed = [[int(num) for num in sub] for sub in board]
-
-
-sudoku.print_board(board)
-print("\n")
-print("-------SOLUCION---------")
-print("\n")
-sudoku.print_board(sudoku.solve(board_fixed))
+menu.opciones()

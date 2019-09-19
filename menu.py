@@ -1,4 +1,9 @@
+import csv
+from reader import Reader
+from solver import Solver
 class Menu():
+
+    
 
     def pedir_numero(self):
 
@@ -15,6 +20,7 @@ class Menu():
 
     def opciones(self):
         salir = False
+        sudoku = Solver()
 
         while not salir:
             print ('1) Ingresar la ruta del archivo')
@@ -26,9 +32,30 @@ class Menu():
             opcion = self.pedir_numero()
 
             if opcion == 1:
-                input("Ingrese la ruta del archivo aqui:")
+                filePath = input("Ingrese la ruta del archivo aqui:")
+                reader = Reader(filePath, ',')
+                board = reader.readFileAsCSV()
+                board_fixed = [[int(num) for num in sub] for sub in board]
+                sudoku.print_board(board)
+                print("\n")
+                print("-------SOLUCION---------")
+                print("\n")
+                sudoku.print_board(sudoku.solve(board_fixed))
 
-                
+                opcion2 = input("¿Desea guardar los resultados en un archivo csv? (Y/N)")
+
+                if opcion2 == 'y':
+                    filePath2 = input("ingrese la ruta donde quiera guardar el archivo:")
+                    datos = [sudoku.print_board(board)]
+                    csvsalida = open('salidat.csv', 'w', newline='')
+                    salida = csv.writer(csvsalida)
+                    salida.writerows(datos)
+                    del salida
+                    csvfile.close()
+                    salir = True
+                else:
+                    salir = True
+
 
 
             elif opcion == 2:
@@ -47,7 +74,8 @@ class Menu():
                 print ("Introduce un numero entre 1 y 4")
 
         print ("Fin")
-            
+    
+
 
 
 
