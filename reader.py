@@ -69,13 +69,14 @@ class Reader():
                     reader = csv.reader(readerCsv, delimiter=delimiter)
                     data = []
                     for row in reader:
+                        row = [int(i) for i in row]
                         data.append(row)
 
             except ValueError:
                 print("Error trying to read the file: " + ValueError)
             return data
         else:
-            print('Ups!, The filepath looks wrong, try to change the filepath')
+            raise ValueError("Ups!, The filepath looks wrong, try to change the filepath")
 
 # Test caseros
 
