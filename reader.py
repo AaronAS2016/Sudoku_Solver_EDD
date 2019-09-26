@@ -1,4 +1,4 @@
-#TODO: 
+# TODO:
 # [] Leer archivo
 # [X] Leer csv
 # [X] Excepciones
@@ -7,11 +7,12 @@
 import os
 import csv
 
+
 class Reader():
-    """ 
+    """
     A class to read Files
 
-    Attributes 
+    Attributes
     ----------
 
     filepath : str
@@ -22,33 +23,33 @@ class Reader():
 
     setFile(filepath)
         change the Path of the class
-    
+
     readFile
         return the content of the file
 
     readFileAsCSV
         return the content of the file of a csv
-    
-    
+
+
      """
-    def __init__(self, filepath="", delimiter=";"):
+
+    def __init__(self, filepath="", delimiter=","):
         self._filepath = filepath
         self._delimiter = delimiter
 
-    
     def setDelimiter(self, delimiter):
         self._delimiter = delimiter
-    
+
     def setFile(self, filepath):
-        """ 
+        """
         Change the Path of the class
 
         Parameter
         --------
-    
-        filepath: str 
+
+        filepath: str
             the new path of the file that want to read
-        
+
         """
         self._filepath = filepath
 
@@ -76,16 +77,15 @@ class Reader():
         else:
             print('Ups!, The filepath looks wrong, try to change the filepath')
 
-## Test caseros 
+# Test caseros
+
 
 # Caso bueno
 """ lector = Reader()
 lector.setFile('resources/boards.csv')
 print(lector.readFileAsCSV(',')) """
 
-#Caso Malo
+# Caso Malo
 """ lector2 = Reader()
 lector2.setFile('rutaquenoexisteniagancho')
 print(lector2.readFileAsCSV()) """
-
-    
