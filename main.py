@@ -28,8 +28,33 @@ class SudokuSolver:
                 self.solverMode()
             elif answer == "2":
                 self.timerMode()
+            elif answer == "3":
+                self.resumeSolver()
 
         self.terminarJuego()
+
+    def resumeSolver(self):
+        board = []
+        try:
+            with open('partial/board', 'rb') as resumeReader:
+                board = pickle.load(resumeReader)
+                sudoku_solved = self.solveBoards(board)
+                saveResults = input(
+                "¿Desea guardar los resultados en un archivo csv? (Y/N)")
+                while(saveResults != 'N'):
+                    if saveResults == 'Y':
+                        filepathResult = input(
+                            "¿Donde desea guardar los resultados? Ingrese el path: ")
+                        self.saveResultsInCsv(sudoku_solved, filepathResult)
+                    else:
+                        print("Por favor ingrese una opcion valida")
+                        saveResults = input(
+                        "¿Desea guardar los resultados en un archivo csv? (Y/N)")
+        except EnvironmentError:
+            print("No se encontro una ejecución parcial previa")
+            input("Presiona enter para continuar...")
+
+
 
     def timerMode(self):
         print("Arrancando modo Timer, midiendo tiempos...")
@@ -131,6 +156,22 @@ class SudokuSolver:
                 contador = 0
         return lista
 
+    def solveBoards (self, board) :
+        sudoku_solved = []
+        if len(board) > 9:
+            boards = self.splitBoards(board)
+            try:
+                for newboard in boards:
+                    sudoku_solved += self.solveBoard(newboard)
+            except KeyboardInterrupt:
+                saveBoards = input("¿Quieres guardar los tableros resueltos? (Y/N)")
+                if saveBoards == "Y":
+                    with open('partial/boards', 'wb') as saveBoardsWriter:
+                        pickle.dump(sudoku_solved, saveBoardsWriter)
+        else:
+            sudoku_solved += self.solveBoard(board)
+        return sudoku_solved
+
     def solverMode(self):
         print("Bienvenido al modo solver")
         pathFile = input(
@@ -147,17 +188,7 @@ class SudokuSolver:
             if type(board) is not list:
                 print("Tablero invalido, Por favor ponga otra ruta")
             else:
-                sudoku_solved = []
-
-                if len(board) > 9:
-                    boards = self.splitBoards(board)
-                    for newboard in boards:
-                        sudoku_solved += self.solveBoard(newboard)
-                    # print(splitBoards(board))
-
-                else:
-                    sudoku_solved += self.solveBoard(board)
-
+                sudoku_solved = self.solveBoards(board)
                 saveResults = input(
                     "¿Desea guardar los resultados en un archivo csv? (Y/N)")
                 while(saveResults != 'N'):
