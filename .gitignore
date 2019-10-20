@@ -1,2 +1,5 @@
-.gitigonre
 __pycache__/
+.vscode
+.ipynb_checkpoints
+output
+partial
