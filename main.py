@@ -36,7 +36,7 @@ class SudokuSolver:
     def resumeSolver(self):
         board = []
         try:
-            with open('partial/board', 'rb') as resumeReader:
+            with open('partial/boards', 'rb') as resumeReader:
                 board = pickle.load(resumeReader)
                 sudoku_solved = self.solveBoards(board)
                 saveResults = input(
@@ -114,7 +114,6 @@ class SudokuSolver:
     def saveResultsInCsv(self, data, filepath="resources/solve.csv"):
         system('clear')
         print("Guardandooo...")
-        sleep(2)
         self._writer.writeAsCSV(filepath, data)
         print("Guardado!")
 
@@ -207,6 +206,7 @@ class SudokuSolver:
                     "Ingrese el path del archivo o 0 para volver al menu principal: ")
             except ValueError:
                 print("Ruta invalida")
+                print(ValueError)
                 pathFile = input("Ingrese el path del archivo o 0 para volver al menu principal: ")
 
 
