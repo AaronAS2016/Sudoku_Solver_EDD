@@ -46,6 +46,7 @@ class SudokuSolver:
                         filepathResult = input(
                             "¿Donde desea guardar los resultados? Ingrese el path: ")
                         self.saveResultsInCsv(sudoku_solved, filepathResult)
+                        saveResults = "N"
                     else:
                         print("Por favor ingrese una opcion valida")
                         saveResults = input(
@@ -197,6 +198,7 @@ class SudokuSolver:
                             filepathResult = input(
                                 "¿Donde desea guardar los resultados? Ingrese el path: ")
                             self.saveResultsInCsv(sudoku_solved, filepathResult)
+                            saveResults = "N"
                         else:
                             print("Por favor ingrese una opcion valida")
                             saveResults = input(
@@ -206,7 +208,6 @@ class SudokuSolver:
                     "Ingrese el path del archivo o 0 para volver al menu principal: ")
             except ValueError:
                 print("Ruta invalida")
-                print(ValueError)
                 pathFile = input("Ingrese el path del archivo o 0 para volver al menu principal: ")
 
 

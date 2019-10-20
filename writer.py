@@ -24,16 +24,14 @@ class Writer:
             path = self._result_file_path
         if data is None:
             data = self._file_data
-        if(os.path.isfile(path)):
 
-            try:
-                with open(path, 'w') as csvWriter:
-                    writter = csv.writer(csvWriter)
-                    writter.writerows(data)
-            except ValueError:
-                print("Ocurrio un errro al intentar escribir el archivo: " + ValueError)
-        else:
-            print("Ruta no valida")
+        try:
+            with open(path, 'w') as csvWriter:
+                writter = csv.writer(csvWriter)
+                writter.writerows(data)
+        except ValueError:
+            print("Ocurrio un errro al intentar escribir el archivo: " + ValueError)
+
 # Tests caseros
 
 
