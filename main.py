@@ -18,20 +18,23 @@ class SudokuSolver:
         self.iniciarJuego()
 
     def iniciarJuego(self):
-        answer = 0
-        while(answer != "4"):
-            system('clear')
-            self.printMenu()
-            answer = input("Ingrese la opcion que quiera ejecutar: ")
-            system('clear')
-            if answer == "1":
-                self.solverMode()
-            elif answer == "2":
-                self.timerMode()
-            elif answer == "3":
-                self.resumeSolver()
+        try:
+            answer = 0
+            while(answer != "4"):
+                system('clear')
+                self.printMenu()
+                answer = input("Ingrese la opcion que quiera ejecutar: ")
+                system('clear')
+                if answer == "1":
+                    self.solverMode()
+                elif answer == "2":
+                    self.timerMode()
+                elif answer == "3":
+                    self.resumeSolver()
 
-        self.terminarJuego()
+            self.terminarJuego()
+        except KeyboardInterrupt:
+            self.terminarJuego()
 
     def resumeSolver(self):
         board = []
