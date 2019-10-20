@@ -179,30 +179,35 @@ class SudokuSolver:
 
         while pathFile != "0":
 
-            self._reader.setFile(pathFile)
-            board = self._reader.readFileAsCSV()
+            try:
 
-            system('clear')
-            print("\n")
+                self._reader.setFile(pathFile)
+                board = self._reader.readFileAsCSV()
 
-            if type(board) is not list:
-                print("Tablero invalido, Por favor ponga otra ruta")
-            else:
-                sudoku_solved = self.solveBoards(board)
-                saveResults = input(
-                    "¿Desea guardar los resultados en un archivo csv? (Y/N)")
-                while(saveResults != 'N'):
-                    if saveResults == 'Y':
-                        filepathResult = input(
-                            "¿Donde desea guardar los resultados? Ingrese el path: ")
-                        self.saveResultsInCsv(sudoku_solved, filepathResult)
-                    else:
-                        print("Por favor ingrese una opcion valida")
-                        saveResults = input(
-                            "¿Desea guardar los resultados en un archivo csv? (Y/N)")
+                system('clear')
+                print("\n")
 
-            pathFile = input(
-                "Ingrese el path del archivo o 0 para volver al menu principal: ")
+                if type(board) is not list:
+                    print("Tablero invalido, Por favor ponga otra ruta")
+                else:
+                    sudoku_solved = self.solveBoards(board)
+                    saveResults = input(
+                        "¿Desea guardar los resultados en un archivo csv? (Y/N)")
+                    while(saveResults != 'N'):
+                        if saveResults == 'Y':
+                            filepathResult = input(
+                                "¿Donde desea guardar los resultados? Ingrese el path: ")
+                            self.saveResultsInCsv(sudoku_solved, filepathResult)
+                        else:
+                            print("Por favor ingrese una opcion valida")
+                            saveResults = input(
+                                "¿Desea guardar los resultados en un archivo csv? (Y/N)")
+
+                pathFile = input(
+                    "Ingrese el path del archivo o 0 para volver al menu principal: ")
+            except ValueError:
+                print("Ruta invalida")
+                pathFile = input("Ingrese el path del archivo o 0 para volver al menu principal: ")
 
 
 juego = SudokuSolver()
