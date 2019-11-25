@@ -6,7 +6,7 @@ Trabajo practico Estructura de Datos
 *Christian Maldonado
 *Sabrina Cardoso
 
-## Decisiones de diseño:
+## Decisiones de diseÃ±o:
 *Decidimos separar en clases para dividir responsabilidades en main
 
 ## Conclusiones:
